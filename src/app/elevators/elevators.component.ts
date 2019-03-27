@@ -14,7 +14,7 @@ export class ElevatorsComponent implements OnInit {
 
   ngOnInit() {
     let obs$ = this.http.get('https://elvtest-api.azurewebsites.net/elevator/getall');
-    obs$.subscribe((response) => this.elevators = response as Elevator[]));
+    obs$.subscribe((response) => this.elevators = response as Elevator[]);
   }
 
 }

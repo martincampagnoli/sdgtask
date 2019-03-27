@@ -1,9 +1,22 @@
-<p>
-  elevators works!
-</p>
-<div>
-    Elevators:
-    <ul>
-        <li *ngFor="let e of elevators">{{e.id}} {{e.elevatorCode}} {{e.statusCode}} {{e.statusDescription}} {{e.lastUpdated}} </li>
-    </ul>
-</div>
+<br>
+<table class="table">
+  <thead class="grey lighten-2">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Code</th>
+      <th scope="col">Status Code</th>
+      <th scope="col">Status Description</th>
+      <th scope="col">Last Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of elevators">
+      <th scope="row">{{e.id}}</th>
+      <td>{{e.elevatorCode}}</td>
+      <td>{{e.statusCode}}</td>
+      <td>{{e.statusDescription}}</td>
+      <td>{{e.lastUpdated}}</td>
+    </tr>
+
+  </tbody>
+</table>
