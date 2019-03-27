@@ -1,3 +1,9 @@
 <p>
   elevators works!
 </p>
+<div>
+    Elevators:
+    <ul>
+        <li *ngFor="let e of elevators">{{e.id}} {{e.elevatorCode}} {{e.statusCode}} {{e.statusDescription}} {{e.lastUpdated}} </li>
+    </ul>
+</div>
