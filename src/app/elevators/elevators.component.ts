@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Elevator } from '../elevator';
+import { Elevator } from '../models/elevator';
 
 @Component({
   selector: 'app-elevators',
