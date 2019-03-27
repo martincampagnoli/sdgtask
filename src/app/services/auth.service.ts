@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from './user';
+import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
@@ -23,7 +23,7 @@ export class AuthService {
   login(username: string, password: string) {
       return this.http.post<any>(`https://elvtest-api.azurewebsites.net/token/login`, { username, password })
           .pipe(map(user => {
-              if (user && user.refreshToken) {
+              if (user && user.accessToken) {
                   localStorage.setItem('currentUser', JSON.stringify(user));
                   this.currentUserSubject.next(user);
               }
