@@ -1,7 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" style="cursor:pointer" (click)="logout()">Logout</a>
+    </div>
+</nav>
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    SDG Task
   </h1>
 </div>
 <router-outlet></router-outlet>

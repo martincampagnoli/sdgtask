@@ -45,7 +45,11 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate(['elevators']);
+                    if (data.accessToken){
+                      this.router.navigate(['elevators']);
+                    }
+                    this.error = data.result;
+                    this.loading = false;
                 },
                 error => {
                     this.error = error;
