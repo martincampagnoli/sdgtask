@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private router: Router,
         private authService: AuthService
-    ) { }
+    ) {
+      this.authService.logout();
+     }
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
@@ -28,7 +30,6 @@ export class LoginComponent implements OnInit {
             password: ['', Validators.required]
         });
 
-        this.authService.logout();
     }
 
     get f() { return this.loginForm.controls; }

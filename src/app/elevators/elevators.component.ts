@@ -13,8 +13,11 @@ export class ElevatorsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    let obs$ = this.http.get('https://elvtest-api.azurewebsites.net/elevator/getall');
-    obs$.subscribe((response) => this.elevators = response as Elevator[]);
+    this.http.get('https://elvtest-api.azurewebsites.net/elevator/getall')
+        .subscribe(
+                  response => {
+                      this.elevators = response as Elevator[]
+                    });
   }
 
 }
