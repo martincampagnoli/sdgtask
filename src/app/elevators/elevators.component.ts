@@ -14,10 +14,10 @@ export class ElevatorsComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('https://elvtest-api.azurewebsites.net/elevator/getall')
-        .subscribe(
+              .subscribe(
                   response => {
-                      this.elevators = response as Elevator[]
-                    });
+                          this.elevators = response as Elevator[]
+                        });
   }
 
 }
