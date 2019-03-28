@@ -31,4 +31,20 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('SDG Task');
   }));
+  it('should render logout button if a user is logged in', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.currentUser = {'user': 'john doe'};
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('a').textContent).toContain('Logout');
+  }));
+  it('should not render logout button if no user is logged in', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.currentUser = null;
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('a')).toBeFalsy();
+  }));
 });
