@@ -31,10 +31,29 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should initalize the form empty', () => {
+    expect(component.loginForm.value.username).toEqual('');
+    expect(component.loginForm.value.password).toEqual('');
+
+  });
   it('should call the login function if the login button is clicked', () => {
     const button = fixture.debugElement.nativeElement.querySelector('.fourth');
     button.click();
     expect(component.submitted).toBeTruthy();
+  });
+  it('should display a message if username is empty after login button is clicked', () => {
+    const button = fixture.debugElement.nativeElement.querySelector('.fourth');
+    button.click();
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.missing-username').textContent).toContain('Username is required : try mjean');
+  });
+  it('should display a message if password is empty after login button is clicked', () => {
+    const button = fixture.debugElement.nativeElement.querySelector('.fourth');
+    button.click();
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.missing-password').textContent).toContain('Password is required : try password@123');
   });
 
 

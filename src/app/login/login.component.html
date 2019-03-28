@@ -7,14 +7,14 @@
       <div class="form-group">
           <input type="text" id="login" formControlName="username" class="form-control fadeIn second"
                  [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback missing-username">
               <div *ngIf="f.username.errors.required">Username is required : try mjean</div>
           </div>
       </div>
       <div class="form-group">
           <input type="text" id="password" formControlName="password" class="form-control fadeIn third"
                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback missing-password">
               <div *ngIf="f.password.errors.required">Password is required : try password@123</div>
           </div>
       </div>

@@ -19,7 +19,6 @@ export class ElevatorsComponent implements OnInit {
                 response => {
                         this.elevators = response as Elevator[]
                       });
-
   }
 
 }
