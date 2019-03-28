@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Elevator } from '../models/elevator';
+import { ElevatorsService } from '../services/elevators.service';
 
 @Component({
   selector: 'app-elevators',
@@ -10,14 +10,16 @@ import { Elevator } from '../models/elevator';
 export class ElevatorsComponent implements OnInit {
   elevators: Elevator[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private elevatorsService: ElevatorsService) {
+  }
 
   ngOnInit() {
-    this.http.get('https://elvtest-api.azurewebsites.net/elevator/getall')
-              .subscribe(
-                  response => {
-                          this.elevators = response as Elevator[]
-                        });
+    let elevators$ = this.elevatorsService.getAll();
+    elevators$.subscribe(
+                response => {
+                        this.elevators = response as Elevator[]
+                      });
+
   }
 
 }
