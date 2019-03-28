@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   currentUser: User;
+  title = "SDG Task";
 
    constructor(
        private router: Router,
