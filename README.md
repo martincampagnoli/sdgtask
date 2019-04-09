@@ -27,10 +27,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## About the task
+## About this solution
 
-This solution has been developed in about 6 hours during 3 days. Although my main framework is AngularJS, I wanted to use Angular 7 so I had to do some research in the syntax and some elements that I used here.
-
-The Front End consists in 2 views rendered by 2 components, and another component to wrap them up. One view is public containing the login form, and the other one is auth-protected containing the elevators info for the specific logged user. A service to authenticate the user, another service to get the elevators data, a guard to protect the private view, and an interceptor to send the JWT along with the requests.
-
-What I couldn't implement but considered it was the possibility to 'refresh' the app every minute as the database is updated every minute so that the user will see the new data as it comes into the database. Also a layout improvement with more sophisticated design, more unit tests and e2e testing.
+This solution has been developed in about 6 hours during 3 days to try Angular 7 out.
